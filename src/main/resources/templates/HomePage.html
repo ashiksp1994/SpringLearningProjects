@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>UrbanNest - Apartment Reservation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-section {
+      background-image: url(https://example.com/hero-image.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+    }
+
+    .search-section {
+      background-color: #f8f8f8;
+      padding: 40px 0;
+    }
+
+    .search-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 400px;
+    }
+
+    .search-container input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>UrbanNest</h1>
+    <p>Apartment Reservation</p>
+  </header>
+  
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Find Your Dream Apartment</h1>
+      <p>Book the perfect apartment for your next trip with ease.</p>
+    </div>
+  </div>
+
+  <div class="search-section">
+    <div class="search-container">
+      <h2>Search for Apartments</h2>
+      <form class="reservation-form" action="#" method="post">
+        <input type="text" id="location" name="location" placeholder="Enter a location">
+        <input type="submit" value="Search Apartments">
+      </form>
+    </div>
+  </div>
+
+  <footer class="header">
+    <p>&copy; 2023 UrbanNest. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
