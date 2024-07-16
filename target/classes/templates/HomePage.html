@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>UrbanNest - Apartment Reservation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header class="header">
+    <h1>UrbanNest</h1>
+    <p>Apartment Reservation</p>
+  </header>
+  
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Find Your Dream Apartment</h1>
+      <p>Book the perfect apartment for your next trip with ease.</p>
+      <button class="btn btn-primary" onclick="location.href='reservation-form.html'">Reserve here</button>
+    </div>
+  </div>
+
+  <div class="search-section">
+    <div class="search-container">
+      <h2>Search for Apartments</h2>
+      <form class="reservation-form" action="#" method="post">
+        <input type="text" id="location" name="location" placeholder="Enter a location">
+        <input type="submit" value="Search Apartments">
+      </form>
+    </div>
+  </div>
+
+  <footer class="header">
+    <p>&copy; 2023 UrbanNest. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
