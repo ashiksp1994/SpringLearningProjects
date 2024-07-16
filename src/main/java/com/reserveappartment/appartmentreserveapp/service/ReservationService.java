@@ -73,5 +73,9 @@ public class ReservationService {
         reservation.setUser(user);
         return reservation;
     }
+    
+    public void save(Reservation reservation) {
+        reservationRepository.save(reservation);
+    }
 
 }
