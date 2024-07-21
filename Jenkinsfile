@@ -32,7 +32,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('ashiksp123/appartmentreserveapp:latest')
+                    docker.build('ashiksssppp/appartmentreserveapp:latest')
                 }
             }
         }
@@ -40,14 +40,14 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials-id') {
-                        docker.image('ashiksp123/appartmentreserveapp:latest').push()
+                        docker.image('ashiksssppp/appartmentreserveapp:latest').push()
                     }
                 }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 8080:8080 ashiksp123/appartmentreserveapp:latest'
+                sh 'docker run -d -p 8080:8080 ashiksssppp/appartmentreserveapp:latest'
             }
         }
     }
