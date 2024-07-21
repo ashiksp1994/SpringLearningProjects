@@ -1,22 +1,30 @@
 pipeline {
-    agent {
-        docker { image 'maven:3.6.3-jdk-11' }
-    }
-    environment {
-        DOCKER_CLI = '/usr/bin/docker'
-    }
+    agent any
+
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/ashiksp1994/SpringLearningProjects.git'
             }
         }
         stage('Build') {
+            agent {
+                docker {
+                    image 'maven:3.8.4-openjdk-11'
+                    args '-v /root/.m2:/root/.m2'
+                }
+            }
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'maven:3.8.4-openjdk-11'
+                    args '-v /root/.m2:/root/.m2'
+                }
+            }
             steps {
                 sh 'mvn test'
             }
@@ -24,13 +32,22 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('your-docker-image:latest')
+                    docker.build('ashiksssppp@gmail.com/appartmentreserveapp:latest')
+                }
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials-id') {
+                        docker.image('ashiksssppp@gmail.com/appartmentreserveapp:latest').push()
+                    }
                 }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 8080:8080 your-docker-image:latest'
+                sh 'docker run -d -p 8080:8080 ashiksssppp@gmail.com/appartmentreserveapp:latest'
             }
         }
     }
